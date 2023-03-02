@@ -1,0 +1,60 @@
+<script>
+
+console.log('[Fila/Queue]');
+
+ // FIFO
+
+//pessoas na programacao = qualquer tipo de dado
+// uma atras da outra, a ordem importa
+// quem entra primeiro sai primeiro
+
+var fila = [
+
+    'scripts.js',
+    'style.css',
+    'imagem.png'
+
+];
+
+//adiciona alguem na fila
+fila.push('doguinho.png');
+
+//remove primeiro da fila
+fila.shift();
+// ========================
+//receita pra criar filas
+// ========================
+// - enqueue: enfileirar
+// - dequeue: desenfileirar
+
+class Queue{ // classe: receita pra criar objetos
+    constructor(){
+        this.data = [];
+    }
+    
+    print(){
+        console.log(this.data);
+    }
+    
+    enqueue(item){
+        this.data.push(item);
+    }
+
+    dequeue(){
+        this.data.shift();
+    }
+
+}
+        //Design do código First
+        var requests = new Queue();
+        // open closed
+        // open: aberto para extensão
+        // fechado: para modificação
+        requests.enqueue('scripts.js');
+        requests.dequeue('scripts.js');
+        requests.enqueue('style.css');
+        requests.enqueue('imagem.png');
+        requests.enqueue('doguinho.png');
+        requests.print();
+
+</script>
